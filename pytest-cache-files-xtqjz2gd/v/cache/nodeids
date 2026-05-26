@@ -1,0 +1,11 @@
+[
+  "tests/test_orchestrator.py::test_aggregate_ignores_failures",
+  "tests/test_orchestrator.py::test_aggregate_uses_worst_ok",
+  "tests/test_orchestrator.py::test_exception_caught",
+  "tests/test_orchestrator.py::test_register_and_run",
+  "tests/test_orchestrator.py::test_run_many",
+  "tests/test_orchestrator.py::test_severity_from_name",
+  "tests/test_orchestrator.py::test_severity_grade",
+  "tests/test_orchestrator.py::test_unregistered_returns_failure",
+  "tests/test_orchestrator.py::test_write_report"
+]

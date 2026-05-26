@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "darkforge-cli"
+version = "0.1.0"
+description = "One CLI orchestrating the darkforge security suite (dns-doctor, pipeline-armor, phish-forge, ctf-toolkit, steg-toolkit)."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "@forgehk" }]
+keywords = ["security", "devsecops", "orchestrator", "cli", "incident-response"]
+dependencies = []
+
+[project.optional-dependencies]
+all = ["dns-doctor", "pipeline-armor", "phish-forge", "ctf-toolkit", "steg-toolkit"]
+scan = ["dns-doctor", "pipeline-armor"]
+ir = ["phish-forge", "ctf-toolkit", "steg-toolkit"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+darkforge = "darkforge_cli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["darkforge_cli*"]
