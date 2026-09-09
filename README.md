@@ -2,7 +2,7 @@
 
 > One command to run the entire **darkforge** security suite against a target — DNS / TLS audit, secret-scan a repo, phishing-email analysis, CTF and steganography helpers. Wraps every other tool in the suite behind a single CLI.
 
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)]() [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/forgehk/darkforge-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/forgehk/darkforge-cli/actions/workflows/ci.yml) [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg)]() [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
