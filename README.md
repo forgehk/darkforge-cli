@@ -47,12 +47,20 @@ $ darkforge phish suspicious.eml
   ! 3 URLs flagged
 ```
 
-Plus quick CTF and steg helpers:
+Plus quick CTF and steg helpers. Everything after `ctf` or `steg` is handed to
+the underlying tool unchanged, so quoted arguments and paths with spaces survive:
 
 ```bash
-$ darkforge ctf cipher caesar-brute "Uryyb, Jbeyq!"
-shift=13 -> Hello, World!
+$ darkforge ctf cipher caesar-brute "Uryyb, Jbeyq! Guvf vf n frperg zrffntr."
+darkforge -- ctf
+
+  [1/1] ctf        OK   . shift=13 → Hello, World! This is a secret message.
+
+shift=13 → Hello, World! This is a secret message.
 ```
+
+When a wrapped tool exits non-zero, the last line of its stderr is shown next
+to `FAIL` so you can see why it failed.
 
 ---
 
