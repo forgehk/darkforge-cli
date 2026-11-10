@@ -58,13 +58,11 @@ def main(argv=None) -> int:
     if args.cmd == "phish":
         r = o.run("phish", args.eml); _print(1, 1, r); return 0 if r.ok else 1
     if args.cmd == "ctf":
-        rest = " ".join(args.rest) if args.rest else ""
-        r = o.run("ctf", rest); _print(1, 1, r)
+        r = o.run("ctf", "", args.rest); _print(1, 1, r)
         if r.detail.get("stdout"): print("\n" + r.detail["stdout"])
         return 0 if r.ok else 1
     if args.cmd == "steg":
-        rest = " ".join(args.rest) if args.rest else ""
-        r = o.run("steg", rest); _print(1, 1, r)
+        r = o.run("steg", "", args.rest); _print(1, 1, r)
         if r.detail.get("stdout"): print("\n" + r.detail["stdout"])
         return 0 if r.ok else 1
     if args.cmd == "full":
