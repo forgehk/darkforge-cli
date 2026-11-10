@@ -98,6 +98,10 @@ def shell_runner(cmd: list, *, name: str, parse=None) -> SubcommandResult:
     except subprocess.TimeoutExpired:
         return SubcommandResult(name=name, ok=False, error="timeout")
     out = completed.stdout
+    error = ""
+    if completed.returncode != 0:
+        lines = completed.stderr.strip().splitlines()
+        error = lines[-1] if lines else f"exit status {completed.returncode}"
     if parse is not None:
         severity, count, summary = parse(out)
     else:
@@ -107,4 +111,5 @@ def shell_runner(cmd: list, *, name: str, parse=None) -> SubcommandResult:
         worst_severity=severity, findings_count=count, summary=summary,
         detail={"stdout": out[:4000], "stderr": completed.stderr[:1000],
                 "exit": completed.returncode},
+        error=error,
     )
